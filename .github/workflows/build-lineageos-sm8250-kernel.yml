@@ -180,7 +180,8 @@ jobs:
         else
           echo "LOCALVERSION=" >> $GITHUB_ENV
         fi
-        sed -i 's/ -dirty//g' ./scripts/setlocalversion
+        cd $GITHUB_WORKSPACE/kernel_workspace/android-kernel/scripts
+        sed -i 's/ -dirty//g' setlocalversion
 
     - name: Download source boot image
       if: env.BUILD_BOOT_IMG == 'true'

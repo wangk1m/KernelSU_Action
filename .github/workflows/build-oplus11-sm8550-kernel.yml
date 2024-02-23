@@ -52,7 +52,7 @@ jobs:
         OUT_DIR=../../out
         DEFCONFIG="gki_defconfig vendor/kalama_GKI.config"
         LTO=thin
-        export PATH=$GITHUB_WORKSPACE/kernel_workspace/clang-aosp/bin:$PATH"
+        export PATH=$GITHUB_WORKSPACE/kernel_workspace/clang-aosp/bin:$PATH
         export CLANG_TRIPLE=aarch64-linux-gnu-
         export ARCH=arm64
         export SUBARCH=arm64

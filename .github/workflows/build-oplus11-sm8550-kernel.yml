@@ -1,4 +1,4 @@
-name: Build OnePlus SM8550 Kernel
+name: Build OnePlus 11 SM8550 Kernel
 on:
   workflow_dispatch:
 

@@ -83,5 +83,5 @@ jobs:
     - name: Upload AnyKernel3
       uses: actions/upload-artifact@v4
       with:
-        name: AK3-OP11-A14-KSU-$(date +%y%m%d)
+        name: AK3-OP11-A14-KSU-$(TZ=Asia/Shanghai date +%y%m%d)
         path: kernel_workspace/AnyKernel3/*

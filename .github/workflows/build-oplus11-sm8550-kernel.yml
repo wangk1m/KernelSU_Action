@@ -69,7 +69,6 @@ jobs:
         make -j"$THREAD" O=${OUT_DIR} "${TOOL_ARGS[@]}"
 
     - name: Make Anykernel3
-      if: env.CHECK_FILE_IS_OK == 'true' && env.USE_CUSTOM_ANYKERNEL3 != 'true'
       run: |
         cd $GITHUB_WORKSPACE/kernel_workspace
         git clone https://github.com/Kernel-SU/AnyKernel3 --depth=1 AnyKernel3

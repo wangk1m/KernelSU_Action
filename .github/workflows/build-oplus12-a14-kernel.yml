@@ -32,6 +32,24 @@ jobs:
         sed -i 's/ -dirty//g' setlocalversion
         sed -i 's/ -g / -android14-11-g /g' setlocalversion
 
+    - name: OnePlus 12 Kernel Patch
+      run: |
+        cd $GITHUB_WORKSPACE/kernel_workspace
+        mkdir ./kernel_platform/common/drivers/soc/oplus
+        ln -s '../../../../../vendor/oplus/kernel/boot' './kernel_platform/common/drivers/soc/oplus/boot'
+        ln -s '../../../../../vendor/oplus/kernel/device_info/device_info' './kernel_platform/common/drivers/soc/oplus/device_info'
+        ln -s '../../../../../vendor/oplus/kernel/dft' './kernel_platform/common/drivers/soc/oplus/dft'
+        ln -s '../../../../../vendor/oplus/hardware/radio/kernel/mdmrst' './kernel_platform/common/drivers/soc/oplus/mdmrst'
+        ln -s '../../../../../vendor/oplus/kernel/multimedia/feedback' './kernel_platform/common/drivers/soc/oplus/multimedia'
+        ln -s '../../../../../vendor/oplus/kernel/storage/storage_feature_in_module' './kernel_platform/common/drivers/soc/oplus/storage'
+        ln -s '../../../../../vendor/oplus/kernel/dfr' './kernel_platform/common/drivers/soc/oplus/dfr'
+        ln -s '../../../../../vendor/oplus/kernel/hans' './kernel_platform/common/drivers/soc/oplus/hans'
+        ln -s '../../../../../vendor/oplus/hardware/radio/kernel/mdmfeature' './kernel_platform/common/drivers/soc/oplus/mdmfeature'
+        ln -s '../../../../../vendor/oplus/kernel/cpu/midas' './kernel_platform/common/drivers/soc/oplus/midas'
+        ln -s '../../../../../vendor/oplus/sensor/kernel/oplus_consumer_ir' './kernel_platform/common/drivers/soc/oplus/oplus_consumer_ir'
+        ln -s '../../../../../vendor/oplus/kernel/power' './kernel_platform/common/drivers/soc/oplus/power'
+        ln -s '../../../../../vendor/oplus/sensor/kernel/qcom/sensor' './kernel_platform/common/drivers/soc/oplus/sensor'
+
     - name: Download Clang-aosp
       run: |
         cd $GITHUB_WORKSPACE/kernel_workspace

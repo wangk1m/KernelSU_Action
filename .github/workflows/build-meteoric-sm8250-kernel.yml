@@ -1,4 +1,4 @@
-name: Build LineageOS SM8250 Kernel
+name: Build Meteoric SM8250 Kernel
 on:
   workflow_dispatch:
 

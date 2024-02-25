@@ -1,4 +1,4 @@
-name: Build OnePlus Ace 2 A14 Kernel
+name: Build OnePlus Ace 2 Pro A14 Kernel
 on:
   workflow_dispatch:
 
@@ -25,13 +25,13 @@ jobs:
 
     - name: Download kernel source
       run: |
-        git clone https://github.com/OnePlusOSS/android_kernel_modules_and_devicetree_oneplus_sm8475 -b oneplus/sm8475_u_14.0.0_oneplus_ace_2 kernel_workspace --depth=1
+        git clone https://github.com/OnePlusOSS/android_kernel_modules_and_devicetree_oneplus_sm8550 -b oneplus/sm8550_u_14.0.0_oneplus_ace2pro kernel_workspace --depth=1
         cd $GITHUB_WORKSPACE/kernel_workspace
         cd kernel_platform
-        git clone https://github.com/OnePlusOSS/android_kernel_oneplus_sm8475 -b oneplus/sm8475_u_14.0.0_oneplus_ace_2 common --depth=1
+        git clone https://github.com/OnePlusOSS/android_kernel_oneplus_sm8550 -b oneplus/sm8550_u_14.0.0_oneplus_ace2pro common --depth=1
         cd common/scripts
         sed -i 's/ -dirty//g' setlocalversion
-        sed -i 's/ -g / -android12-9-g /g' setlocalversion
+        sed -i 's/ -g / -android13-8-g /g' setlocalversion
 
     - name: Download Clang-aosp
       run: |
@@ -51,7 +51,7 @@ jobs:
         cd $GITHUB_WORKSPACE/kernel_workspace
         KERNEL_DIR=./kernel_platform/common
         OUT_DIR=../../out
-        DEFCONFIG="gki_defconfig vendor/waipio_GKI.config"
+        DEFCONFIG="gki_defconfig vendor/kalama_GKI.config"
         LTO=thin
         export PATH=$GITHUB_WORKSPACE/kernel_workspace/clang-aosp/bin:$PATH
         export CLANG_TRIPLE=aarch64-linux-gnu-
@@ -84,5 +84,5 @@ jobs:
     - name: Upload AnyKernel3
       uses: actions/upload-artifact@v4
       with:
-        name: AK3-OPAce3-A14-KSU-${{ env.BUILD_TIME }}
+        name: AK3-OPAce2P-A14-KSU-${{ env.BUILD_TIME }}
         path: kernel_workspace/AnyKernel3/*

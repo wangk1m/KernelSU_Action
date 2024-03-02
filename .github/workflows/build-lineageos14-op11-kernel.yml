@@ -1,5 +1,7 @@
 name: Build OnePlus 11 LineageOS 14 Kernel
 on:
+  schedule:
+    - cron: '0 18 * * 0,2,4,6'
   workflow_dispatch:
 
 jobs:

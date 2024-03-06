@@ -337,7 +337,7 @@ jobs:
       if: env.CHECK_FILE_IS_OK == 'true'
       uses: actions/upload-artifact@v4
       with:
-        name: AK3-LOS-OPlus-SM8250${{ env.LOCALVERSION }}-${{ env.BUILD_TIME }}
+        name: AK3-LOS14-OPlus-SM8250${{ env.LOCALVERSION }}-${{ env.BUILD_TIME }}
         path: kernel_workspace/AnyKernel3/*
 
     - name: Upload DTBO image

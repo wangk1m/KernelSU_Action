@@ -85,5 +85,5 @@ jobs:
     - name: Upload AnyKernel3
       uses: actions/upload-artifact@v4
       with:
-        name: AK3-OP11-LOS14${{ env.UPLOADNAME }}-${{ env.BUILD_TIME }}
+        name: AK3-LOS14-OP11${{ env.UPLOADNAME }}-${{ env.BUILD_TIME }}
         path: kernel_workspace/AnyKernel3/*

@@ -51,7 +51,7 @@ jobs:
         cd $GITHUB_WORKSPACE/kernel_workspace
         KERNEL_DIR=./kernel_platform/common
         OUT_DIR=../../out
-        DEFCONFIG="Kconfig gki_defconfig vendor/pineapple_GKI.config"
+        DEFCONFIG="Kconfig gki_defconfig vendor/pineapple_GKI.config vendor/pineapple_consolidate.config vendor/pineapple_tuivm.config"
         LTO=thin
         export PATH=$GITHUB_WORKSPACE/kernel_workspace/clang-aosp/bin:$PATH
         export CLANG_TRIPLE=aarch64-linux-gnu-
